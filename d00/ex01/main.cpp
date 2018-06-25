@@ -6,11 +6,12 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:05:15 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 08:58:18 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 16:14:27 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "utils.h"
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -24,26 +25,19 @@ void			printMenu(void) {
 	std::cout << std::endl;
 }
 
-std::string		toLower(std::string s) {
-	for (int i = 0; i < s.length(); i++) {
-		s[i] = tolower(s[i]);
-	}
-	return (s);
-}
-
 PhoneBook		initPhoneBook(void) {
-	std::string	size;
+	int			_size;
 
 	std::cout << "Please, enter an integer for book size" << std::endl;
-	std::getline(std::cin, size);
-	PhoneBook book(stoi(size));
+	_size = getNumber();
+	PhoneBook book(_size);
 	return (book);
 }
 
 static void		search(PhoneBook phoneBook) {
 	int				index;
 	std::string		dummy;
-	Contact			contact;
+	Contact			*contact;
 
 	if (phoneBook.index() == 0) {
 		std::cout << "Phonebook is empty." << std::endl;
@@ -51,13 +45,12 @@ static void		search(PhoneBook phoneBook) {
 	}
 	phoneBook.print();
 	std::cout << "Enter the index of a contact: ";
-	std::cin >> index;
-	std::cout << std::endl;
+	index = getNumber();
 	contact = phoneBook.search(index);
-	if (!contact.isEmpty())
-		contact.print();
-	std::cin.clear();
-	std::getline(std::cin, dummy);
+	if (contact)
+		contact->print();
+	else
+		std::cout << "I searched but found nothing." << std::endl;
 }
 
 int				main(void) {

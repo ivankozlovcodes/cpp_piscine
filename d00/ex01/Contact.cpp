@@ -6,24 +6,16 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:56:21 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 15:27:35 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 16:11:01 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "utils.h"
 #include <iostream>
 
 Contact::Contact(void) { return ; }
 Contact::~Contact(void) { return ; }
-
-std::string		getInfo(std::string field) {
-	std::string		buffer;
-
-	std::cout << "Please, enter a ";
-	std::cout << field << std::endl;
-	std::getline(std::cin, buffer);
-	return (buffer);
-}
 
 Contact		Contact::createNewContact(void) {
 	Contact		newContact;

@@ -6,11 +6,12 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:10:27 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 15:35:29 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 16:12:58 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "utils.h"
 #include <iostream>
 #include <iomanip>
 
@@ -27,14 +28,6 @@ void			PhoneBook::addContact(Contact newContact) {
 		return ;
 	}
 	this->_contacts[this->_index++] = newContact;
-}
-
-std::string		truncate(std::string s, int len) {
-	if (s.length() > len) {
-		s.erase(len - 1, s.length() - len + 1);
-		s += '.';
-	}
-	return (s);
 }
 
 void			PhoneBook::print(void) {
@@ -59,8 +52,8 @@ int				PhoneBook::index(void) {
 	return (this->_index);
 }
 
-Contact			PhoneBook::search(int idx) {
+Contact			*PhoneBook::search(int idx) {
 	if (idx > this->_index)
-		return (Contact());
-	return (this->_contacts[idx]);
+		return (NULL);
+	return (&this->_contacts[idx]);
 }

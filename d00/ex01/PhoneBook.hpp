@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:08:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 22:14:23 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/25 16:13:08 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	PhoneBook
 
 		void		addContact(Contact newContact);
 		void		print(void);
-		Contact		search(int idx);
+		Contact		*search(int idx);
 
 		int			index(void);
 
