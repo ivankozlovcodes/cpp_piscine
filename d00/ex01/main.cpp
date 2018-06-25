@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:05:15 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 22:15:55 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/25 08:58:18 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void			printMenu(void) {
 	std::cout << "Phoneboook" << std::endl;
 	std::cout << "Commands:" << std::endl;
 	std::cout << "ADD" << std::endl;
+	std::cout << "SEARCH" << std::endl;
+	std::cout << "MENU" << std::endl;
+	std::cout << "EXIT" << std::endl;
 	std::cout << std::endl;
 }
 
@@ -29,11 +32,11 @@ std::string		toLower(std::string s) {
 }
 
 PhoneBook		initPhoneBook(void) {
-	int			size;
+	std::string	size;
 
 	std::cout << "Please, enter an integer for book size" << std::endl;
-	std::cin >> size;
-	PhoneBook book(size);
+	std::getline(std::cin, size);
+	PhoneBook book(stoi(size));
 	return (book);
 }
 
@@ -62,8 +65,6 @@ int				main(void) {
 
 	printMenu();
 	PhoneBook phoneBook = initPhoneBook();
-	// next line is there in order to fix first command read
-	std::getline(std::cin, command);
 	while (1) {
 		std::cout << "Please, enter a command" << std::endl;
 		std::getline(std::cin, command);
@@ -74,6 +75,8 @@ int				main(void) {
 			search(phoneBook);
 		else if (command == EXIT_COMMAND)
 			break ;
+		else if (command == "menu")
+			printMenu();
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
