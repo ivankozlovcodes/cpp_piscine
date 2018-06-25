@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:10:27 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 22:16:41 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/25 15:35:29 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void			PhoneBook::addContact(Contact newContact) {
 }
 
 std::string		truncate(std::string s, int len) {
+	if (s.length() > len) {
+		s.erase(len - 1, s.length() - len + 1);
+		s += '.';
+	}
 	return (s);
 }
 
@@ -42,6 +46,10 @@ void			PhoneBook::print(void) {
 		current = this->_contacts[i];
 		std::cout << "|" << std::setw(WIDTH) << i;
 		tmp = truncate(current.getFirstName(), 10);
+		std::cout << "|" << std::setw(WIDTH) << tmp;
+		tmp = truncate(current.getLastName(), 10);
+		std::cout << "|" << std::setw(WIDTH) << tmp;
+		tmp = truncate(current.getNickname(), 10);
 		std::cout << "|" << std::setw(WIDTH) << tmp;
 		std::cout << "|" << std::endl;
 	}
