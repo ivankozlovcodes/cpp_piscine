@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:54:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 22:07:35 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/25 09:24:21 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,19 @@ class	Contact
 		~Contact(void);
 
 		std::string		getFirstName(void);
+		std::string		getLastName(void);
+		std::string		getNickname(void);
 
 		void			setFirstName(std::string name);
+		void			setLastName(std::string name);
+		void			setNickname(std::string name);
+		void			setLogin(std::string name);
+		void			setEmail(std::string name);
+		void			setPhone(std::string name);
+		void			setBday(std::string name);
+		void			setMeal(std::string name);
+		void			setUColor(std::string name);
+		void			setSecret(std::string name);
 
 		void			print(void);
 		int				isEmpty(void);
@@ -32,6 +43,15 @@ class	Contact
 
 	private:
 		std::string		_firstName;
+		std::string		_lastName;
+		std::string		_nickname;
+		std::string		_login;
+		std::string		_email;
+		std::string		_phone;
+		std::string		_bday;
+		std::string		_meal;
+		std::string		_ucolor;
+		std::string		_secret;
 		int				_notEmpty;
 };
 
