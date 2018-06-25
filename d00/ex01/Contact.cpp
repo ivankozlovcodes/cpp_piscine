@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:56:21 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 20:45:14 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/24 22:08:21 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Contact		Contact::createNewContact(void) {
 	Contact		newContact;
 
 	newContact.setFirstName(getInfo("first name"));
+	newContact._notEmpty = 1;
 	return (newContact);
 }
 
@@ -38,4 +39,12 @@ std::string		Contact::getFirstName(void) {
 
 void			Contact::setFirstName(std::string name) {
 	this->_firstName = name;
+}
+
+void			Contact::print(void) {
+	std::cout << "Print contact" << std::endl;
+}
+
+int				Contact::isEmpty(void) {
+	return (!this->_notEmpty);
 }

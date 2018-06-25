@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:05:15 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 21:06:06 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/24 22:15:55 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,26 @@ PhoneBook		initPhoneBook(void) {
 	return (book);
 }
 
+static void		search(PhoneBook phoneBook) {
+	int				index;
+	std::string		dummy;
+	Contact			contact;
+
+	if (phoneBook.index() == 0) {
+		std::cout << "Phonebook is empty." << std::endl;
+		return ;
+	}
+	phoneBook.print();
+	std::cout << "Enter the index of a contact: ";
+	std::cin >> index;
+	std::cout << std::endl;
+	contact = phoneBook.search(index);
+	if (!contact.isEmpty())
+		contact.print();
+	std::cin.clear();
+	std::getline(std::cin, dummy);
+}
+
 int				main(void) {
 	std::string		command;
 
@@ -50,8 +70,12 @@ int				main(void) {
 		command = toLower(command);
 		if (command == ADD_COMMAND)
 			phoneBook.addContact(Contact::createNewContact());
-		else
+		else if (command == SEARCH_COMMAND)
+			search(phoneBook);
+		else if (command == EXIT_COMMAND)
 			break ;
+		else
+			std::cout << "Invalid command" << std::endl;
 	}
 	return (0);
 }

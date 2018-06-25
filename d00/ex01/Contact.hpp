@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:54:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/24 20:41:23 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/24 22:07:35 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@ class	Contact
 
 		void			setFirstName(std::string name);
 
+		void			print(void);
+		int				isEmpty(void);
+
 		static Contact	createNewContact(void);
 
 	private:
 		std::string		_firstName;
+		int				_notEmpty;
 };
 
 #endif
