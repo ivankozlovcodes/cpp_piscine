@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:05:15 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 16:14:27 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 19:36:56 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,6 @@ void			printMenu(void) {
 	std::cout << "MENU" << std::endl;
 	std::cout << "EXIT" << std::endl;
 	std::cout << std::endl;
-}
-
-PhoneBook		initPhoneBook(void) {
-	int			_size;
-
-	std::cout << "Please, enter an integer for book size" << std::endl;
-	_size = getNumber();
-	PhoneBook book(_size);
-	return (book);
 }
 
 static void		search(PhoneBook phoneBook) {
@@ -55,15 +46,19 @@ static void		search(PhoneBook phoneBook) {
 
 int				main(void) {
 	std::string		command;
+	PhoneBook		phoneBook;
 
 	printMenu();
-	PhoneBook phoneBook = initPhoneBook();
 	while (1) {
 		std::cout << "Please, enter a command" << std::endl;
 		std::getline(std::cin, command);
 		command = toLower(command);
-		if (command == ADD_COMMAND)
-			phoneBook.addContact(Contact::createNewContact());
+		if (command == ADD_COMMAND) {
+			if (phoneBook.index() < MAX_CAPACITY)
+				phoneBook.addContact(Contact::createNewContact());
+			else
+				std::cout << "Phonebook is full" << std::endl;
+		}
 		else if (command == SEARCH_COMMAND)
 			search(phoneBook);
 		else if (command == EXIT_COMMAND)

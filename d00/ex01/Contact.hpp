@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:54:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 09:24:21 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 19:32:22 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class	Contact
 		void			setSecret(std::string name);
 
 		void			print(void);
-		int				isEmpty(void);
 
 		static Contact	createNewContact(void);
 
@@ -52,7 +51,6 @@ class	Contact
 		std::string		_meal;
 		std::string		_ucolor;
 		std::string		_secret;
-		int				_notEmpty;
 };
 
 #endif

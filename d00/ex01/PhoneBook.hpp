@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:08:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 16:13:08 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 19:37:51 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@
 # define SEARCH_COMMAND "search"
 # define EXIT_COMMAND "exit"
 
+# define MAX_CAPACITY 8
 # define WIDTH 10
 
 class	PhoneBook
 {
 	public:
-		PhoneBook(int capacity);
+		PhoneBook(void);
 		~PhoneBook(void);
 
 		void		addContact(Contact newContact);
