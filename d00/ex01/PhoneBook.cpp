@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:10:27 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 16:12:58 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 19:33:12 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <iostream>
 #include <iomanip>
 
-PhoneBook::PhoneBook(int capacity) {
-	this->_capacity = capacity;
+PhoneBook::PhoneBook(void) {
+	this->_capacity = MAX_CAPACITY;
 	this->_index = 0;
 	this->_contacts = new Contact[this->_capacity];
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 19:56:21 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 16:11:01 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/25 19:32:18 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Contact		Contact::createNewContact(void) {
 	newContact.setMeal(getInfo("favorite meal"));
 	newContact.setUColor(getInfo("underwear color"));
 	newContact.setSecret(getInfo("darkest secret"));
-	newContact._notEmpty = 1;
 	return (newContact);
 }
 
@@ -108,8 +107,4 @@ void			Contact::print(void) {
 	std::cout << "Darkest secret: ";
 	std::cout << _secret << std::endl;
 	std::cout << std::endl;
-}
-
-int				Contact::isEmpty(void) {
-	return (!this->_notEmpty);
 }
