@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 19:14:44 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 20:26:16 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 20:52:57 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,19 @@ Form::Form(const Form &src) :
 	_signed(src._signed),
 	_grade_to_sign(src._grade_to_sign),
 	_grade_to_execute(src._grade_to_execute),
-	_name(src._name)
+	_name(src._name),
+	_target(src._target)
 {
 	*this = src;
 }
 
-Form::Form(std::string name, int grade_to_sign, int grade_to_execute) :
+Form::Form(std::string target, std::string name,\
+		int grade_to_sign, int grade_to_execute) :
 	_signed(false),
 	_grade_to_sign(grade_to_sign),
 	_grade_to_execute(grade_to_execute),
-	_name(name)
+	_name(name),
+	_target(target)
 {
 	if (this->_grade_to_sign < MIN_GRADE || this->_grade_to_execute < MIN_GRADE)
 		throw Form::GradeTooHighException();
@@ -78,6 +81,25 @@ std::string
 Form::getName(void) const
 {
 	return (this->_name);
+}
+
+std::string
+Form::getTarget(void) const
+{
+	return (this->_target);
+}
+
+void
+Form::execute(const Bureaucrat& executor) const
+{
+    if (executor.getGrade() > _grade_to_execute)
+    {
+        throw Form::GradeTooLowException();
+    }
+    else if (!_signed) 
+    {
+        throw Form::NotSignedException();
+    }
 }
 
 std::ostream
@@ -155,4 +177,38 @@ const char
 GradeTooLowException::what() const throw()
 {
 	return (Form::GradeTooLowException::message);
+}
+
+/*
+ *	NotSignedException
+ */
+
+const char
+*Form::NotSignedException::message =\
+		"Form cannot be executed as it was not signed yet.";
+
+Form::
+NotSignedException::NotSignedException(void) {}
+
+Form::
+NotSignedException::NotSignedException(const NotSignedException &src)
+{
+	*this = src;
+}
+
+Form::
+NotSignedException::~NotSignedException(void) throw() {}
+
+Form::NotSignedException
+&Form::NotSignedException::operator= (const NotSignedException &rhs)
+{
+    (void)rhs;
+    return (*this);
+}
+
+const char
+*Form::
+NotSignedException::what() const throw()
+{
+	return (Form::NotSignedException::message);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 18:25:56 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 19:39:45 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/30 20:44:39 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,27 @@ class	Form
 				static const char	*message;
 		};
 
+		/*
+		 *	NotSignedException class
+		 */
+		class NotSignedException : public std::exception
+		{
+			public:
+				NotSignedException(void);
+				NotSignedException(const NotSignedException &src);
+				virtual ~NotSignedException(void) throw();
+
+				NotSignedException &operator= (const NotSignedException &obj);
+
+				virtual const char	*what() const throw();
+
+				static const char	*message;
+		};
+
 		Form(void);
 		Form(const Form &src);
-		Form(std::string name, int grade_to_sign, int grade_to_execute);
+		Form(std::string targer, std::string name,\
+				int grade_to_sign, int grade_to_execute);
 
 		~Form(void);
 
@@ -69,12 +87,16 @@ class	Form
 		int						getGradeToSign(void) const;
 		int						getGradeToExecute(void) const;
 		std::string				getName(void) const;
+		std::string				getTarget(void) const;
+
+		virtual void			execute(const Bureaucrat &executor) const = 0;
 
 	private:
 		bool					_signed;
 		const int				_grade_to_sign;
 		const int				_grade_to_execute;
 		const std::string		_name;
+		const std::string		_target;
 };
 
 #endif
