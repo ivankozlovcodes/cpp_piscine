@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 19:14:44 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 21:51:29 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 22:09:04 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ Form::GradeTooHighException
 }
 
 const char
-*Form::GradeTooHighException::message = "Bureaucrat can't do anything with form as their grade is too high.";
+*Form::GradeTooHighException::message = "Bureaucrat's grade is too high.";
 
 const char
 *Form::
@@ -155,7 +155,7 @@ GradeTooHighException::what() const throw()
  */
 
 const char
-*Form::GradeTooLowException::message = "Bureaucrat can't do anything with form as their grade is too low.";
+*Form::GradeTooLowException::message = "Bureaucrat's grade is too low.";
 
 Form::
 GradeTooLowException::GradeTooLowException(void) {}
