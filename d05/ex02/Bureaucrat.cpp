@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:35:33 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 20:57:27 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 21:56:48 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ Bureaucrat::executeForm(const Form &form)
 	catch (std::exception &e)
 	{
 		std::cout << this->_name << " has failed to execute " \
-					<< form.getName() << " becuase " << e.what() << std::endl;
+					<< form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
