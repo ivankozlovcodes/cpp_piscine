@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 19:14:44 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 21:37:01 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 21:51:29 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ std::ostream
 {
 	out << "Form Details:" << std::endl
 			<< "Name: " << obj.getName() << std::endl
-			<< "Targer: " << obj.getTarget() << std::endl
+			<< "Target: " << obj.getTarget() << std::endl
 			<< "Signing Grade Requirement: " << obj.getGradeToSign() << std::endl
 			<< "Execution Grade Requirement: " << obj.getGradeToExecute() << std::endl;
 	if(obj.getSigned())
