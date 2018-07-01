@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:29:20 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 17:06:19 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 19:14:38 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class	Bureaucrat
 			public:
 				GradeTooHighException(void);
 				GradeTooHighException(const GradeTooHighException &src);
+
 				virtual ~GradeTooHighException(void) throw();
 
 				GradeTooHighException &operator= (const GradeTooHighException &obj);
@@ -49,6 +50,7 @@ class	Bureaucrat
 			public:
 				GradeTooLowException(void);
 				GradeTooLowException(const GradeTooLowException &src);
+
 				virtual ~GradeTooLowException(void) throw();
 
 				GradeTooLowException &operator= (const GradeTooLowException &obj);
