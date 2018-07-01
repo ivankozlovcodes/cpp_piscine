@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:29:20 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 20:06:23 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/30 20:51:52 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ class	Bureaucrat
 		void					decGrade(void);
 
 		void					signForm(Form &form);
+		void					executeForm(const Form &form);
 
 	private:
 		int				_grade;
