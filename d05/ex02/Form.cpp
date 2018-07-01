@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 19:14:44 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 20:52:57 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 21:29:58 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,11 +105,15 @@ Form::execute(const Bureaucrat& executor) const
 std::ostream
 &operator<< (std::ostream &out, const Form &obj)
 {
-	out << "The form: " << obj.getName() << " which is " \
-		<< (obj.getSigned() ? "" : "not ") \
-		<< "signed, which requires a grade " << obj.getGradeToSign() \
-		<< " to sign, and " << obj.getGradeToExecute() << " to be executed." \
-		<< std::endl;
+	out << "Form Details:" << std::endl
+			<< "Name: " << obj.getName() << std::endl
+			<< "Targer: " << obj.getTarget() << std::endl
+			<< "Signing Grade Requirement: " << obj.getGradeToSign() << std::endl
+			<< "Execution Grade Requirement: " << obj.getGradeToExecute() << std::endl;
+	if(obj.getSigned())
+			out << "Form has been signed." << std::endl;
+	else
+			out << "Form has not been signed yet." << std::endl;
 	return (out);
 }
 
