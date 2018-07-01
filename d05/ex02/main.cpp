@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 20:08:55 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/30 22:06:23 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,47 @@
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 
 static void
-checkForm(Bureaucrat bureaucrat, Form format)
+signAndExecuteForms(Bureaucrat b, ShrubberyCreationForm f1, \
+                    RobotomyRequestForm f2, PresidentialPardonForm f3)
 {
-	try
-	{
-		bureaucrat.signForm(format);
-		std::cout << bureaucrat << std::endl;
-		std::cout << format << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return ;
+    try
+    {
+        b.signForm(f1);
+        b.signForm(f2);
+        b.signForm(f3);
+
+        b.executeForm(f1);
+        b.executeForm(f2);
+        b.executeForm(f3);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    return ;
 }
 
 int
 main(void)
 {
-	Form        f1 = Form("A form", 42, 42);
-	Form        f2 = Form("Another one...", 30, 50);
-	Bureaucrat  b1 = Bureaucrat("Marvin", 42);
-	Bureaucrat  b2 = Bureaucrat("Mr. Abraham", 1);
+    Bureaucrat                    b1("B1", 69);
+    Bureaucrat                    b2("B2", 42);
+    Bureaucrat                    b3("B3", 1);
+    ShrubberyCreationForm         f1("SCF_2");
+    RobotomyRequestForm           f2("RRF_2");
+    PresidentialPardonForm        f3("PDF_2");
 
-	checkForm(b1, f1);
-	std::cout << std::endl;
+    signAndExecuteForms(b1, f1, f2, f3);
 
-	checkForm(b1, f2);
-	std::cout << std::endl;
+    signAndExecuteForms(b2, f1, f2, f3);
 
-	checkForm(b2, f1);
-	std::cout << std::endl;
+    signAndExecuteForms(b3, f1, f2, f3);
 
-	checkForm(b2, f2);
-	std::cout << std::endl;
-	return (0);
+    return (0);
 }
