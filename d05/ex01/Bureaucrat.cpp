@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:35:33 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 17:09:22 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 20:23:21 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void)
@@ -45,7 +46,7 @@ Bureaucrat
 std::ostream
 &operator<< (std::ostream &out, const Bureaucrat &obj)
 {
-	out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
+	out << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return (out);
 }
 
@@ -81,6 +82,21 @@ std::string
 Bureaucrat::getName(void) const
 {
 	return (this->_name);
+}
+
+void
+Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->_name << " cannot sign " << form.getName()\
+				<< " because " << e.what() << std::endl;
+	}
 }
 
 /*

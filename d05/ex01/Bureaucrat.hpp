@@ -6,7 +6,7 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:29:20 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 19:14:38 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/30 20:06:23 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 # define TOO_LOW_MSG "Grade is too low... Should be within [1, 150]"
 # define TOO_HIGH_MSG "Grade is too high... Should be within [1, 150]"
+
+class Form;
 
 class	Bureaucrat
 {
@@ -73,6 +75,8 @@ class	Bureaucrat
 		void					setName(std::string name);
 		void					incGrade(void);
 		void					decGrade(void);
+
+		void					signForm(Form &form);
 
 	private:
 		int				_grade;
