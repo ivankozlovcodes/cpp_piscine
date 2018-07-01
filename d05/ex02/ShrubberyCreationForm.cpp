@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 20:33:42 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 21:08:58 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 22:07:05 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
 	ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec) { }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) :
-	Form(src.getName(), ShrubberyCreationForm::name,\
+	Form(src.getTarget(), ShrubberyCreationForm::name,\
 	ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
 {
 	*this = src;

@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 20:33:42 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 21:32:01 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/06/30 21:51:59 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 const int PresidentialPardonForm::_sign = 25;
 const int PresidentialPardonForm::_exec = 5;
 const std::string
-PresidentialPardonForm::name = "Shrubbery";
+PresidentialPardonForm::name = "Pardon";
 
 PresidentialPardonForm::PresidentialPardonForm(void) :
 	Form("Anonymous", PresidentialPardonForm::name,\
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) :
 	PresidentialPardonForm::_sign, PresidentialPardonForm::_exec) { }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) :
-	Form(src.getName(), PresidentialPardonForm::name,\
+	Form(src.getTarget(), PresidentialPardonForm::name,\
 	PresidentialPardonForm::_sign, PresidentialPardonForm::_exec)
 {
 	*this = src;
@@ -45,6 +45,6 @@ void
 PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	Form::execute(executor);
-    std::cout << getTarget() << " has been pardoned by Zafod Beebkerox." \
+    std::cout << this->getTarget() << " has been pardoned by Zafod Beebkerox." \
               << std::endl;
 }
