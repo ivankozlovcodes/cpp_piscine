@@ -6,7 +6,7 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 19:14:44 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 19:41:37 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/06/30 20:08:23 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ Form::Form(const Form &src) :
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute) :
 	_signed(false),
+	_name(name),
 	_grade_to_sign(grade_to_sign),
 	_grade_to_execute(grade_to_execute)
 {
-	if (this->_grade_to_sign < 1 || this->_grade_to_execute < 1)
+	if (this->_grade_to_sign < MIN_GRADE || this->_grade_to_execute < MIN_GRADE)
 		throw Form::GradeTooHighException();
-	if (this->_grade_to_sign > 150 || this->_grade_to_execute < 150)
+	if (this->_grade_to_sign > MAX_GRADE || this->_grade_to_execute > MAX_GRADE)
 		throw Form::GradeTooLowException();
 }
 
@@ -82,9 +83,9 @@ Form::getName(void) const
 std::ostream
 &operator<< (std::ostream &out, const Form &obj)
 {
-	out << "The form: " << obj.getName() << " which is " \
+	out << "The form:" << obj.getName() << " which is " \
 		<< (obj.getSigned() ? "" : "not ") \
-		<< " signed, which requires a grade " << obj.getGradeToSign() \
+		<< "signed, which requires a grade " << obj.getGradeToSign() \
 		<< " to sign, and " << obj.getGradeToExecute() << " to be executed." \
 		<< std::endl;
 	return (out);
