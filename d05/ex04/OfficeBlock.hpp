@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 16:38:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 16:40:37 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 17:55:35 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class	OfficeBlock
 				virtual ~NoInternException(void) throw();
 				NoInternException &operator=(NoInternException const &r);
 				virtual const char* what() const throw();
+
+				static const char	*message;
 		};
 
 		class NoSignerException : public std::exception
@@ -58,6 +60,8 @@ class	OfficeBlock
 				virtual ~NoSignerException(void) throw();
 				NoSignerException &operator=(NoSignerException const &r);
 				virtual const char* what() const throw();
+
+				static const char	*message;
 		};
 
 		class NoExecuterException : public std::exception
@@ -69,6 +73,8 @@ class	OfficeBlock
 				virtual ~NoExecuterException(void) throw();
 				NoExecuterException &operator=(NoExecuterException const &r);
 				virtual const char* what() const throw();
+
+				static const char	*message;
 		};
 
 	private:
