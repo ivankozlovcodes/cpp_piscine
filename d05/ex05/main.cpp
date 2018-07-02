@@ -6,52 +6,83 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 18:17:33 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 19:19:02 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+
 #include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include "Bureaucrat.hpp"
 #include "OfficeBlock.hpp"
+#include "CentralBureaucracy.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
-
-	Bureaucrat  Arta("Arta Rose", 20);
-	Bureaucrat  Lydeka("Lydeka White", 100);
-
-	std::cout << Arta << std::endl;
-	std::cout << Lydeka << std::endl;
-
-	Intern	whocares;
-	OfficeBlock ob;
-	std::cout << "** Created new Intern and new OfficeBlock **" << std::endl
-		<< "** Setting Signer (Arta), and Executor (Lydeka) **" << std::endl;
-
-	ob.setSigner(Arta);
-	ob.setExecutor(Lydeka);
+	CentralBureaucracy	cb;
+	std::cout << "** Made central Bureaucracy **" << std::endl;
 
 	try
 	{
-		std::cout << std::endl << "** DoBureaucracy on Shrubbery Creation target Bushes, no interns present, should catch error" << std::endl;
-		ob.doBureaucracy(PP, "Bushes");
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+		std::cout << std::endl << "** Making Bureaucracy do stuff, but nothing should happen due to lack of executer, signer and target **" << std::endl;
+		cb.doBureaucracy();
 
-	ob.setIntern(whocares);
-	try
-	{
-		std::cout << std::endl << "** DoBureaucracy on Shrubbery Creation target Bushes **" << std::endl;
-		ob.doBureaucracy(PP, "Bushes");
-		ob.doBureaucracy("asd", "Bushes");
+		std::cout << std::endl << "** Generating 6 signers **" << std::endl;
+		cb.feedSigner(*new Bureaucrat("Arta", 1));
+		cb.feedSigner(*new Bureaucrat("Bella", 10));
+		cb.feedSigner(*new Bureaucrat("Caddie", 25));
+		cb.feedSigner(*new Bureaucrat("Diana", 45));
+		cb.feedSigner(*new Bureaucrat("Diana", 45));
+		cb.feedSigner(*new Bureaucrat("Eve", 80));
+		cb.feedSigner(*new Bureaucrat("Gracia", 120));
+
+		std::cout << std::endl << "** Making Bureaucracy do stuff, but nothing should happen due to lack of executer and target **" << std::endl;
+		cb.doBureaucracy();
+
+		std::cout << std::endl << "** Generating 4 executer **" << std::endl;
+		cb.feedExecuter(*new Bureaucrat("Lydeka", 1));
+		cb.feedExecuter(*new Bureaucrat("Mikaela", 20));
+		cb.feedExecuter(*new Bureaucrat("Ninian", 60));
+		cb.feedExecuter(*new Bureaucrat("Onna", 110));
+		cb.feedExecuter(*new Bureaucrat("Onna", 110));
+
+		std::cout << std::endl << "** Making Bureaucracy do stuff, but nothing should happen due to lack targets **" << std::endl;
+		cb.doBureaucracy();
+
+		std::cout << std::endl << "** Generating 26 targets **" << std::endl;
+		cb.queueUp("Apple");
+		cb.queueUp("Banana");
+		cb.queueUp("Carrot");
+		cb.queueUp("Daikon");
+		cb.queueUp("Elephant");
+		cb.queueUp("Frost");
+		cb.queueUp("Giant");
+		cb.queueUp("Hill");
+		cb.queueUp("Igloo");
+		cb.queueUp("Jack");
+		cb.queueUp("Kangaroo");
+		cb.queueUp("Lamp");
+		cb.queueUp("Michael");
+		cb.queueUp("Niagra");
+		cb.queueUp("Ostrich");
+		cb.queueUp("Platypus");
+		cb.queueUp("Quilt");
+		cb.queueUp("Razor");
+		cb.queueUp("Sand");
+		cb.queueUp("Time");
+		cb.queueUp("Uvula");
+		cb.queueUp("Vuvuzuela");
+		cb.queueUp("Walrus");
+		cb.queueUp("Xylophone");
+		cb.queueUp("Young");
+		cb.queueUp("Zebra");
+
+		std::cout << std::endl << "** Making Bureaucracy do stuff, watch the magic! **" << std::endl;
+		cb.doBureaucracy();
 	}
 	catch (std::exception &e)
 	{
