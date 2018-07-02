@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 18:30:47 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 19:17:07 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 19:25:35 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ CentralBureaucracy
 {
 	std::copy(src._targets,\
 		src._targets + CentralBureaucracy::_targets_num, this->_targets);
-	// std::copy(src._blocks,\
-		src._blocks + CentralBureaucracy::_blocks_num, this->_blocks);
+	// std::copy(src._blocks,
+	// src._blocks + CentralBureaucracy::_blocks_num, this->_blocks);
 	return (*this);
 }
 
