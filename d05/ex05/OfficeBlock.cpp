@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 17:34:10 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 18:16:03 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 18:54:42 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@ OfficeBlock::setExecutor(Bureaucrat &obj)
 {
 	std::cout << "Set executor " << obj << " to an office block" << std::endl;
 	this->_executer = &obj;
+}
+
+Bureaucrat
+*OfficeBlock::getSigner(void)
+{
+	return (this->_signer);
+}
+
+Bureaucrat
+*OfficeBlock::getExecutor(void)
+{
+	return (this->_executer);
 }
 
 /*

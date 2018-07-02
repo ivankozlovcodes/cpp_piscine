@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 16:38:56 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 17:55:35 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 19:04:20 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 # define OFFICEBLOCK_H
 
 #include <iostream>
-#include <string>
-#include <ctime>
-#include <iomanip>
-#include <sstream>
-#include <fstream>
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "Intern.hpp"
+#include "Bureaucrat.hpp"
 
 class	OfficeBlock
 {
@@ -32,11 +27,14 @@ class	OfficeBlock
 		OfficeBlock(Intern &intern, Bureaucrat &signer, Bureaucrat &executer);
 		virtual ~OfficeBlock(void);
 
-		void	setIntern(Intern &obj);
-		void	setSigner(Bureaucrat &obj);
-		void	setExecutor(Bureaucrat &obj);
+		void			setIntern(Intern &obj);
+		void			setSigner(Bureaucrat &obj);
+		void			setExecutor(Bureaucrat &obj);
 
-		void	doBureaucracy(std::string form, std::string target);
+		Bureaucrat*		getSigner(void);
+		Bureaucrat*		getExecutor(void);
+
+		void			doBureaucracy(std::string form, std::string target);
 
 		class NoInternException : public std::exception
 		{
