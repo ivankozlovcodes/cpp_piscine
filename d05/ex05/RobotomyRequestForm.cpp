@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 20:33:42 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 22:06:57 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 19:19:56 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void
 RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	Form::execute(executor);
-	if (rand() % 100 + 1 > 50)
+	if (rand() & 1)
 	{
 		std::cout << "BZZZZZZZZZZ..."\
 				<< getTarget() \
