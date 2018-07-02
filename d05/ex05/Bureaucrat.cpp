@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:35:33 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 21:56:48 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 19:16:52 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ Bureaucrat::signForm(Form &form)
 	{
 		std::cout << this->_name << " cannot sign " << form.getName()\
 				<< " because " << e.what() << std::endl;
+		throw ;
 	}
 }
 
@@ -113,7 +114,8 @@ Bureaucrat::executeForm(const Form &form)
 	catch (std::exception &e)
 	{
 		std::cout << this->_name << " has failed to execute " \
-					<< form.getName() << " because " << e.what() << std::endl;
+				<< form.getName() << " because " << e.what() << std::endl;
+		throw ;
 	}
 }
 
