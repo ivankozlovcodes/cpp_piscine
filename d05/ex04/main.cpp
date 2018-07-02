@@ -6,62 +6,57 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 16:15:09 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 18:17:33 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdexcept>
-
-#include "Form.hpp"
-#include "Intern.hpp"
 #include "Bureaucrat.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+#include "OfficeBlock.hpp"
 
-static void
-signAndExecuteForms(Bureaucrat b, ShrubberyCreationForm f1, \
-		RobotomyRequestForm f2, PresidentialPardonForm f3)
+int	main()
 {
+
+	Bureaucrat  Arta("Arta Rose", 20);
+	Bureaucrat  Lydeka("Lydeka White", 100);
+
+	std::cout << Arta << std::endl;
+	std::cout << Lydeka << std::endl;
+
+	Intern	whocares;
+	OfficeBlock ob;
+	std::cout << "** Created new Intern and new OfficeBlock **" << std::endl
+		<< "** Setting Signer (Arta), and Executor (Lydeka) **" << std::endl;
+
+	ob.setSigner(Arta);
+	ob.setExecutor(Lydeka);
+
 	try
 	{
-		b.signForm(f1);
-		b.signForm(f2);
-		b.signForm(f3);
-
-		b.executeForm(f1);
-		b.executeForm(f2);
-		b.executeForm(f3);
+		std::cout << std::endl << "** DoBureaucracy on Shrubbery Creation target Bushes, no interns present, should catch error" << std::endl;
+		ob.doBureaucracy(PP, "Bushes");
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	return ;
-}
 
-int
-main(void)
-{
-	Form *f1;
-	Form *f2;
-	Form *f3;
-	Form *f4;
-	Intern i1;
-	Bureaucrat b1 = Bureaucrat("Mr. Abraham", 42);
-
-	f1 = i1.makeForm("robotomy request", "Marvin");
-	f2 = i1.makeForm("presidential pardon", "Marvin");
-	f3 = i1.makeForm("shrubbery creation", "Marvin");
-	std::cout << *f1 << std::endl;
-	std::cout << *f2 << std::endl;
-	std::cout << *f3 << std::endl;
-
-	signAndExecuteForms(b1, *(ShrubberyCreationForm *)f3,\
-			*(RobotomyRequestForm *)f1, *(PresidentialPardonForm *)f2);
-
-	f4 = i1.makeForm("TEST", "Marvin");
+	ob.setIntern(whocares);
+	try
+	{
+		std::cout << std::endl << "** DoBureaucracy on Shrubbery Creation target Bushes **" << std::endl;
+		ob.doBureaucracy(PP, "Bushes");
+		ob.doBureaucracy("asd", "Bushes");
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }
