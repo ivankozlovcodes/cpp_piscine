@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 14:42:50 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 16:06:10 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/01 18:19:30 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,18 @@ Intern
 Form*
 Intern::makeForm(std::string name, std::string target)
 {
-	std::map<std::string, Intern::InternFPointer>::iterator it;
+	// std::map<std::string, Intern::InternFPointer>::iterator it;
 	try
 	{
-		it = _functions.find(name);
-		if (it != _functions.end())
-			return ((this)->*(it->second))(target);
+		if (name == PP)
+			return (_newPresidentialPardonForm(target));
+		else if (name == SC)
+			return (_newShrubberyCreationForm(target));
+		else if (name == RR)
+			return (_newRobotomyRequestForm(target));
+		// it = _functions.find(name);
+		// if (it != _functions.end())
+		// 	return ((this)->*(it->second))(target);
 		else
 			throw RobotomyRequestForm::GradeTooLowException();
 	}
