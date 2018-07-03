@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 18:30:47 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 19:25:35 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 20:40:11 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 CentralBureaucracy::CentralBureaucracy(void)
 {
-	srand(time(0));
 	_generateInterns();
 	return;
 }

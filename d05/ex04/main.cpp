@@ -6,21 +6,25 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 18:17:33 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 20:38:31 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <time.h>
+#include <stdlib.h>
 #include <iostream>
-#include "Bureaucrat.hpp"
+
 #include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include "Bureaucrat.hpp"
 #include "OfficeBlock.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
+	srand(time(NULL));
 
 	Bureaucrat  Arta("Arta Rose", 20);
 	Bureaucrat  Lydeka("Lydeka White", 100);

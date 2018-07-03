@@ -6,10 +6,12 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 19:19:02 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 20:40:04 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <time.h>
+#include <stdlib.h>
 #include <iostream>
 
 #include "Form.hpp"
@@ -23,6 +25,8 @@
 
 int	main()
 {
+	srand(time(NULL));
+
 	CentralBureaucracy	cb;
 	std::cout << "** Made central Bureaucracy **" << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 20:33:42 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 19:19:56 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 20:34:26 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,17 @@ RobotomyRequestForm::name = "Robotomy";
 
 RobotomyRequestForm::RobotomyRequestForm(void) :
 	Form("Anonymous", RobotomyRequestForm::name,\
-	RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
-{
-	srand(time(NULL));
-}
+	RobotomyRequestForm::_sign, RobotomyRequestForm::_exec) { }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
 	Form(target, RobotomyRequestForm::name, \
-	RobotomyRequestForm::_sign, RobotomyRequestForm::_exec) 
-{
-	srand(time(NULL));
-}
+	RobotomyRequestForm::_sign, RobotomyRequestForm::_exec) { }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) :
 	Form(src.getTarget(), RobotomyRequestForm::name,\
 	RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
 {
 	*this = src;
-	srand(time(NULL));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void) { }

@@ -6,10 +6,12 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:55:11 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/01 16:15:09 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 20:36:52 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <time.h>
+#include <stdlib.h>
 #include <iostream>
 #include <stdexcept>
 
@@ -44,6 +46,8 @@ signAndExecuteForms(Bureaucrat b, ShrubberyCreationForm f1, \
 int
 main(void)
 {
+	srand(time(NULL));
+
 	Form *f1;
 	Form *f2;
 	Form *f3;
