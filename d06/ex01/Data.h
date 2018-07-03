@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 21:28:08 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/02 21:28:38 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 21:32:28 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define SERIALZATION_H
 
 #include <string>
+
+# define ALPHANUM "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 struct Data
 {
