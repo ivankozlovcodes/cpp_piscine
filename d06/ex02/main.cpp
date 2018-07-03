@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 22:34:07 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/02 22:48:53 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/02 22:49:47 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Base
 			res = new C;
 	}
 	return (res);
-}
+
 
 void
 identify_from_pointer(Base *p)
