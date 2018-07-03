@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/03 14:48:43 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/03 14:55:55 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ FLAGS = -Wconversion -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(OBJS) -o $@
+	$(CXX) $(FLAGS) $(OBJS) -o $@
 
 %.o: %.c
 	$(CXX) $(FLAGS) -o $@ -c $<
