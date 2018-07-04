@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+         #
+#    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/02 16:40:24 by ivankozlov       ###   ########.fr        #
+#    Updated: 2018/07/03 20:01:43 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = clang++
-FLAGS = -Wconversion -Wall -Werror -Wextra
+FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(OBJS) -o $@
+	$(CXX) $(FLAGS) $(OBJS) -o $@
 
 %.o: %.c
 	$(CXX) $(FLAGS) -o $@ -c $<
