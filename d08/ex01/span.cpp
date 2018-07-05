@@ -6,7 +6,7 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 22:14:09 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 02:36:12 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/07/04 18:58:31 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ Span::addNumber(int n)
 	_arr.push_back(n);
 }
 
+int
+Span::longestSpan(void)
+{
+	if (_arr.size() <= 1)
+		throw Span::NotEnoughValuesException();
+	return (std::max_element(_arr.begin(), _arr.end())
+}
 
 /*
  * Span::NotUniqueNumberException Class
