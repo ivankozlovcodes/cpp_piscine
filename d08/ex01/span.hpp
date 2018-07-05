@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 21:05:38 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 02:35:03 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2018/07/04 19:15:07 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Span_H
 # define Span_H
 
-# include <vector>
+# include <set>
 
 class Span
 {
@@ -83,7 +83,7 @@ class Span
 
 	private:
 
-		std::vector<int>	_arr;
+		std::set<int>		_arr;
 		unsigned int		_size;
 
 };

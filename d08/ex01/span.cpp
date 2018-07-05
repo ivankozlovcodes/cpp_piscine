@@ -6,22 +6,18 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 22:14:09 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 19:09:47 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 19:20:36 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
 Span::Span(void) :
-	_size(0),
-	_arr(0) { };
+	_size(0) { }
 
 
 Span::Span(unsigned int n) :
-	_size(n)
-{
-	_arr.reserve(_size);
-}
+	_size(n) { }
 
 Span::Span(Span &obj) 
 {
@@ -40,11 +36,11 @@ Span &Span::operator=(Span const &r)
 void
 Span::addNumber(int n)
 {
-	if (std::find(_arr.begin(), _arr.end(), n) != _arr.end())
+	if (_arr.find(n) != _arr.end())
 		throw Span::NotUniqueNumberException();
 	if (_arr.size() >= _size)
 		throw Span::StorageLimitException();
-	_arr.push_back(n);
+	_arr.insert(n);
 }
 
 int
@@ -52,8 +48,7 @@ Span::longestSpan(void)
 {
 	if (_arr.size() <= 1)
 		throw Span::NotEnoughValuesException();
-	return (*std::max_element(_arr.begin(), _arr.end())\
-			- *std::min_element(_arr.begin(), _arr.end()));
+	return (*_arr.rbegin() - *_arr.begin());
 }
 
 /*
