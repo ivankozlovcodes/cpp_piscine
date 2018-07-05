@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 21:05:38 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/03 22:14:04 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 02:35:03 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,57 @@ class Span
 {
 
 	public:
+
+		/*
+		 *	NotUniqueNumberException class
+		 */
+		class NotUniqueNumberException : public std::exception
+		{
+			public:
+				NotUniqueNumberException(void);
+				NotUniqueNumberException(const NotUniqueNumberException &src);
+				virtual ~NotUniqueNumberException(void) throw();
+
+				NotUniqueNumberException &operator= (const NotUniqueNumberException &obj);
+
+				virtual const char	*what() const throw();
+
+				static const char	*message;
+		};
+
+		/*
+		 *	NotEnoughValuesException class
+		 */
+		class NotEnoughValuesException : public std::exception
+		{
+			public:
+				NotEnoughValuesException(void);
+				NotEnoughValuesException(const NotEnoughValuesException &src);
+				virtual ~NotEnoughValuesException(void) throw();
+
+				NotEnoughValuesException &operator= (const NotEnoughValuesException &obj);
+
+				virtual const char	*what() const throw();
+
+				static const char	*message;
+		};
+
+		/*
+		 *	StorageLimitException class
+		 */
+		class StorageLimitException : public std::exception
+		{
+			public:
+				StorageLimitException(void);
+				StorageLimitException(const StorageLimitException &src);
+				virtual ~StorageLimitException(void) throw();
+
+				StorageLimitException &operator= (const StorageLimitException &obj);
+
+				virtual const char	*what() const throw();
+
+				static const char	*message;
+		};
 
 		Span(void);
 		Span(unsigned int n);
