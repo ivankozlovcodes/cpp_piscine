@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 19:01:18 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 20:38:24 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 20:41:58 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ main(void)
 	}
 
 	srand(time(NULL));
-	for (int i = 1; i < n; i++)
+	for (unsigned int i = 1; i < n; i++)
 		try
 		{
 			sp.addNumber(rand() % 100);
