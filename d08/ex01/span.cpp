@@ -6,10 +6,11 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 22:14:09 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 19:34:30 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 20:32:20 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include <climits>
 
 #include "span.hpp"
@@ -33,6 +34,23 @@ Span &Span::operator=(Span const &r)
 {
 	this->_arr = r._arr;
 	return (*this);
+}
+
+std::ostream
+&operator<< (std::ostream &out, const Span &obj)
+{
+	obj.print(out);
+	return (out);
+}
+
+void
+Span::print(std::ostream &os) const
+{
+	std::set<int>::iterator it;
+
+	for (it = _arr.begin(); it != _arr.end(); it++) {
+		os << *it << " ";
+	}
 }
 
 void

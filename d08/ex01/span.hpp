@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 21:05:38 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 19:15:07 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 20:31:22 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define Span_H
 
 # include <set>
+# include <iostream>
 
 class Span
 {
@@ -75,11 +76,14 @@ class Span
 		Span(unsigned int n);
 		Span(Span &obj);
 		~Span(void);
-		Span &operator=(Span const &r);
+		Span &operator= (Span const &r);
+		friend std::ostream		&operator<< (std::ostream &out,\
+				const Span &obj);
 
 		void				addNumber(int n);
 		int					shortestSpan(void);
 		int					longestSpan(void);
+		void				print(std::ostream &os) const;
 
 	private:
 
