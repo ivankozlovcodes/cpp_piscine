@@ -6,9 +6,11 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 22:14:09 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 19:20:36 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/04 19:34:30 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <climits>
 
 #include "span.hpp"
 
@@ -49,6 +51,22 @@ Span::longestSpan(void)
 	if (_arr.size() <= 1)
 		throw Span::NotEnoughValuesException();
 	return (*_arr.rbegin() - *_arr.begin());
+}
+
+int
+Span::shortestSpan(void)
+{
+	int		res = INT_MAX;
+	std::set<int>::iterator it;
+	std::set<int>::iterator nx;
+
+	for (it = _arr.begin(),\
+			nx = std::next(it, 1); nx != it; it++)
+	{
+		if (nx != _arr.end() && (*nx - *it < res))
+			res = *nx - *it;
+	}
+	return (res);
 }
 
 /*
