@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/03 14:55:55 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/05 22:02:12 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = clang++
-FLAGS = -Wconversion -Wall -Werror -Wextra
+FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
 
 all: $(NAME)
 
