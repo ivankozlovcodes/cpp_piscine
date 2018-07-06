@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 21:08:04 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 21:34:01 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/05 22:39:47 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ class MutantStack : public std::stack<T>
 };
 
 #endif
+
+/* old
+
+template <typename T>
+class MutantStack : public std::stack<T>
+{
+
+	public:
+
+		MutantStack<T>(void) { }
 
 		MutantStack<T>(MutantStack<T> const &r)
 		{
@@ -106,4 +116,4 @@ class MutantStack : public std::stack<T>
 
 };
 
-#endif
+*/
