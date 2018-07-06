@@ -6,14 +6,11 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 21:21:36 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/04 21:31:53 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/05 22:39:14 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <random>
 
 #include "mutantstack.hpp"
 
@@ -39,38 +36,20 @@ int main()
 	++it;
 	--it;
 
+	std::cout << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
+
 	std::stack<int> s(mstack);
-
-	std::cout << std::endl << "Checking output with std::list outputs:" << std::endl;
-	std::list<int>	lmstack;
-
-	lmstack.push_front(5);
-	lmstack.push_front(17);
-	std::cout << lmstack.front() << std::endl;
-	lmstack.pop_front();
-	std::cout << lmstack.size() << std::endl;
-	lmstack.push_front(3);
-	lmstack.push_front(5);
-	lmstack.push_front(737);
-	//[...]
-	lmstack.push_front(0);
-
-	MutantStack<int>::iterator lit = lmstack.begin();
-	MutantStack<int>::iterator lite = lmstack.end();
-	++lit;
-	--lit;
-
-	while (lit != lite)
+	std::cout << std::endl << "Created normal stack" << std::endl;
+	while(!s.empty())
 	{
-		std::cout << *lit << std::endl;
-		++lit;
+		std::cout << s.top() << std::endl;
+		s.pop();
 	}
-	std::stack<int> ls(mstack);
 
 	return 0;
 }
