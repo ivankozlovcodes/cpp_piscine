@@ -1,33 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMonitorModule.hpp                                 :+:      :+:    :+:   */
+/*   IMonitorModule.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 01:57:42 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 16:18:10 by ikozlov          ###   ########.fr       */
+/*   Created: 2018/07/07 16:09:31 by ikozlov           #+#    #+#             */
+/*   Updated: 2018/07/07 16:15:47 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMONITORMODULE_HPP
-# define IMONITORMODULE_HPP
+#include "IMonitorModule.hpp"
 
-class IMonitorModule
-{
-	public:
+IMonitorModule::IMonitorModule(void) { }
 
-		IMonitorModule(void);
-		virtual ~IMonitorModule(void);
-
-		virtual void							tick(void) = 0;
-		
-
-	private:
-
-		IMonitorModule(IMonitorModule const &obj);
-		IMonitorModule	&operator=(IMonitorModule const &r);
-
-};
-
-#endif
+IMonitorModule::~IMonitorModule(void) { }
