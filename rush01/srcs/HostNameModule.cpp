@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 15:55:34 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/07 16:16:41 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/07 16:30:05 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,8 @@ HostNameModule::HostNameModule(std::string name) : BaseModule(name)
 	getlogin_r(buff, _POSIX_HOST_NAME_MAX);
 	_out.push_back(buff);
 }
+
+HostNameModule::~HostNameModule(void) { }
+
+void
+HostNameModule::tick(void) { }
