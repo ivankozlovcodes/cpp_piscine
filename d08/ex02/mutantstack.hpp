@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 21:08:04 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/06 19:09:40 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/06 19:13:40 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ class MutantStack : public std::stack<T>
 			return (std::stack<T>::operator=(r));
 		}
 
-		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::reverse_iterator iterator;
 
 		iterator	begin()
 		{
-			return (this->c.begin());
+			return (this->c.rbegin());
 		}
 
 		iterator end()
 		{
-			return (this->c.end());
+			return (this->c.rend());
 		}
 
 };
