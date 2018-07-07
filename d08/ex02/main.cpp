@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 21:21:36 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/05 22:39:14 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/06 19:10:20 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int main()
 
 	mstack.push(5);
 	mstack.push(17);
-	std::cout << mstack.top() << std::endl;
+	std::cout << "Top: " << mstack.top() << std::endl;
 	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	std::cout << "Size: " << mstack.size() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
@@ -36,7 +36,7 @@ int main()
 	++it;
 	--it;
 
-	std::cout << std::endl;
+	std::cout << "Printing elements: " << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
@@ -45,6 +45,7 @@ int main()
 
 	std::stack<int> s(mstack);
 	std::cout << std::endl << "Created normal stack" << std::endl;
+	std::cout << "Printing elements: " << std::endl;
 	while(!s.empty())
 	{
 		std::cout << s.top() << std::endl;
