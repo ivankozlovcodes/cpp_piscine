@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+         #
+#    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/07 02:31:28 by ivankozlov       ###   ########.fr        #
+#    Updated: 2018/07/07 16:07:31 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 INC = -I includes/
 
 CXX = clang++
-FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
+# FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
 
 all: $(NAME)
 
