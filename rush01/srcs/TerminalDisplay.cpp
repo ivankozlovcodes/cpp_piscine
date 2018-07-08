@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 16:25:52 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 01:37:19 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 12:40:51 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,6 @@ TerminalDisplay::refresh(void)
 	_y = -1;
 	for (it = _modules.begin(); it != _modules.end(); it++)
 		(**it).tick();
-}
-
-void					TerminalDisplay::fillSpace(char *str)
-{
-	while (this->_y < this->_cols)
-	{
-		mvprintw(this->_x, this->_y, str);
-		this->_y = this->_y + 1;
-	}
-	this->_x = this->_x + 1;
-	this->_y = -1;
 }
 
 const char
