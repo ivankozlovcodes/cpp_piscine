@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:58:23 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 21:35:43 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:09:41 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <vector>
 # include <time.h>
 # include <sstream>
+# include <fstream>
 # include <unistd.h>
 # include <limits.h>
 # include <curses.h>
