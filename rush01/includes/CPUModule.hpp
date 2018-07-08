@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:23:35 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/07 21:25:54 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:32:00 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class CPUModule : public BaseModule
 		CPUModule(CPUModule const &obj);
 		CPUModule	&operator=(CPUModule const &r);
 
+		std::string					_cpuinfo;
 };
 
 #endif
