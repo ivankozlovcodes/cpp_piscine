@@ -6,11 +6,12 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 16:25:52 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/07 20:34:20 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:37:19 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_gkrellm.hpp"
+#include <string.h>
 
 TerminalDisplay::TerminalDisplay(std::vector<IMonitorModule*> modules) :
 	IMonitorDisplay(),
@@ -42,10 +43,26 @@ TerminalDisplay::~TerminalDisplay(void)
 void
 TerminalDisplay::main(void)
 {
+	int		c = 0;
+
 	while(1)
 	{
-		refresh();
-		render();
+		try
+		{
+			if ((c = getch()) != ERR)
+			{
+				endwin();
+				break ;
+			}
+			refresh();
+			render();
+		}
+		catch (const std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+			endwin();
+			break ;
+		}
 	}
 }
 
