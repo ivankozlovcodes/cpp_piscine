@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/07 16:07:31 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/07 18:54:41 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ OBJ_FILES = $(SRC_FILES:.cpp=.o)
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
+LIB = -lncurses
 INC = -I includes/
 
 CXX = clang++
@@ -29,7 +30,7 @@ CXX = clang++
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(FLAGS) $(OBJS) $(INC) -o $@
+	$(CXX) $(FLAGS) $(OBJS) $(INC) $(LIB) -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
