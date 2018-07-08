@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:58:23 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 21:16:50 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/07 21:35:43 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # include "IMonitorDisplay.hpp"
 
 # include "BaseModule.hpp"
+# include "CPUModule.hpp"
 # include "OSInfoModule.hpp"
 # include "DateTimeModule.hpp"
 # include "HostNameModule.hpp"
