@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 15:45:31 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/07 20:28:58 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 12:42:46 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class TerminalDisplay : public IMonitorDisplay
 		void		main(void);
 		void		refresh(void);
 		void		render(void);
-		void		fillSpace(char *str);
 
 	private:
 

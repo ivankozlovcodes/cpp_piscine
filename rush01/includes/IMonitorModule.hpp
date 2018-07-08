@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:57:42 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 16:18:10 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 12:38:48 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class IMonitorModule
 		virtual ~IMonitorModule(void);
 
 		virtual void							tick(void) = 0;
-		
 
 	private:
 
