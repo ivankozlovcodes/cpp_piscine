@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:44:50 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:56:43 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ buildModules(void)
 	modules.push_back(new DateTimeModule(" Date and time "));
 	modules.push_back(new CPUModule(" CPU Info "));
 	modules.push_back(new RAMModule(" RAM Info "));
+	modules.push_back(new NetworkModule(" Network "));
 
 	return (modules);
 }
