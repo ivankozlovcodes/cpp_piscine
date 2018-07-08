@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 20:43:25 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/07 21:12:11 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ buildModules(void)
 
 	modules.push_back(new HostNameModule(" Host Name "));
 	modules.push_back(new OSInfoModule(" OS Info "));
+	modules.push_back(new DateTimeModule(" Date and time "));
 
 	return (modules);
 }
