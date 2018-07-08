@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:58:23 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:09:41 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:42:39 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 # include "BaseModule.hpp"
 # include "CPUModule.hpp"
+# include "RAMModule.hpp"
 # include "OSInfoModule.hpp"
 # include "DateTimeModule.hpp"
 # include "HostNameModule.hpp"
