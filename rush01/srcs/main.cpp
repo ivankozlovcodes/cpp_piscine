@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/07 15:58:51 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/07 20:43:25 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ buildModules(void)
 	std::vector<IMonitorModule*>		modules;
 
 	modules.push_back(new HostNameModule(" Host Name "));
+	modules.push_back(new OSInfoModule(" OS Info "));
 
 	return (modules);
 }
