@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/07 18:54:41 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/07 23:40:20 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ INC = -I includes/
 
 CXX = clang++
 # FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
+FLAGS = -g -fsanitize=address
 
 all: $(NAME)
 
