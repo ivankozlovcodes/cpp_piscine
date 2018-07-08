@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:26:13 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 01:33:03 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 01:42:03 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,4 @@ CPUModule::tick(void)
 	_out.push_back("System: " + tmp[4] + "%");
 	_out.push_back("Idle: " + tmp[6] + "%");
 	tmp.clear();
-
-	
 }
