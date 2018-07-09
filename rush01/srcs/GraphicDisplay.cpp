@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 22:04:54 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 22:33:53 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 23:34:12 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,29 @@ GraphicDisplay::GraphicDisplay(std::vector<IMonitorModule*> const modules, sf::R
 
 GraphicDisplay::~GraphicDisplay()
 {
-	_window.close();
+	this->_window.close();
 }
 
 void
 GraphicDisplay::main(void)
 {
-	std::cout << "here" << std::endl;
-	while(_window.isOpen())
+	render();
+	while(this->_window.isOpen())
 	{
 		try
 		{
 			sf::Event event;
-			while (_window.pollEvent(event))
+			while (this->_window.pollEvent(event))
 			{
 				if (event.type == sf::Event::Closed)
-					_window.close();
+					this->_window.close();
 			}
 			refresh();
 			render();
 		}
 		catch (const std::exception &e)
 		{
-			_window.close();
+			this->_window.close();
 			exit(1);
 		}
 	}
@@ -58,7 +58,7 @@ GraphicDisplay::render()
 	sf::Text	t1;
 
 
-	_window.clear(sf::Color::White);
+	this->_window.clear(sf::Color::White);
 
 	t1.setFillColor(sf::Color::Black);
 	t1.setCharacterSize(30);
@@ -78,8 +78,8 @@ GraphicDisplay::render()
 		}
 	}
 	t1.setString(s.c_str());
-	_window.draw(t1);
-	_window.display();
+	this->_window.draw(t1);
+	this->_window.display();
 }
 
 void
