@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:26:13 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 01:42:03 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 22:57:44 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,9 @@
 
 CPUModule::CPUModule(std::string name) : BaseModule(name)
 {
-	std::ifstream				file;
-	std::string					line = "";
-	const char		*cmd =  "sysctl -n machdep.cpu.brand_string > ./.cpuinfo";
+	const char		*cmd =  "sysctl -n machdep.cpu.brand_string";
 
-	std::system(cmd);
-	file.open(".cpuinfo");
-	getline(file, line);
-	file.close();
-	_cpuinfo = line;
+	_cpuinfo = runCommand(cmd);
 	tick();
 }
 
@@ -34,16 +28,13 @@ void
 CPUModule::tick(void)
 {
 	std::string					line = "";
-	std::ifstream				file;
 	std::vector<std::string>	tmp;
-	const char		*cmd =  "top -l 1 | grep -E \"^CPU\" > ./.cpuusage";
+	const char		*cmd =  "top -l 1 | grep -E \"^CPU\"";
 	
-	
-	std::system(cmd);
-	file.open(".cpuusage");
-	while (getline(file, line, ' '))
-		tmp.push_back(line);
-	file.close();
+	line = runCommand(cmd);
+	std::istringstream iss(line);
+	for(std::string s; iss >> s; )
+		tmp.push_back(s);
 	_out.clear();
 	_out.push_back(_cpuinfo);
 	_out.push_back("User: " + tmp[2] + "%");
