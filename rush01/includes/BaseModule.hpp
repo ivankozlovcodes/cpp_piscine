@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 16:13:14 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/07 16:18:03 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 22:49:46 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class BaseModule : public IMonitorModule
 
 		virtual std::string const				&getName(void);
 		virtual std::vector<std::string> const	&getOutput(void) const;
+
+		std::string								runCommand(std::string cmd);
 
 	protected:
 
