@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:56:43 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 18:09:25 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ main(int ac, char *av[])
 	// todo: errors
 	// todo: build modules
 	modules = buildModules();
-	TerminalDisplay		root(modules);
+	// TerminalDisplay		root(modules);
+	GraphicDisplay			root;
 
-	root.main();
+
+	// root.main();
 
 	return (0);
 }

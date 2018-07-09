@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gkrellm.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:58:23 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:54:09 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 17:58:54 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@
 #include <sys/utsname.h>
 // # include <ncurses.h>
 
+# include <wx/wxprec.h>
+#ifndef WX_PRECOMP
+    #include <wx/wx.h>
+#endif
+
 # include "IMonitorModule.hpp"
 # include "IMonitorDisplay.hpp"
 
@@ -38,5 +43,6 @@
 # include "HostNameModule.hpp"
 
 # include "TerminalDisplay.hpp"
+# include "GraphicDisplay.hpp"
 
 #endif
