@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:56:43 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 22:34:05 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ main(int ac, char *av[])
 	// todo: parse flags
 	// todo: help command
 	// todo: errors
-	// todo: build modules
 	modules = buildModules();
+	sf::RenderWindow	window(sf::VideoMode(2000, 1000), "Frankenstein");
+	// GraphicDisplay		root(modules, window);
 	TerminalDisplay		root(modules);
 
 	root.main();
