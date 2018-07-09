@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/07 23:40:20 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/08 22:08:25 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 LIB = -lncurses
-INC = -I includes/
+LIB +=  -framework sfml-graphics -framework sfml-window -framework sfml-system -F SFML/Frameworks
+INC = -I includes/ -I ./SFML/include
 
 CXX = clang++
 # FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
