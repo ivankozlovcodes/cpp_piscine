@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 01:58:23 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 01:54:09 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 22:09:12 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@
 # include <limits.h>
 # include <curses.h>
 # include <iostream>
-#include <sys/utsname.h>
-// # include <ncurses.h>
+# include <sys/utsname.h>
+# include <ncurses.h>
+
+# include <SFML/Graphics.hpp>
 
 # include "IMonitorModule.hpp"
 # include "IMonitorDisplay.hpp"
@@ -38,5 +40,6 @@
 # include "HostNameModule.hpp"
 
 # include "TerminalDisplay.hpp"
+# include "GraphicDisplay.hpp"
 
 #endif
