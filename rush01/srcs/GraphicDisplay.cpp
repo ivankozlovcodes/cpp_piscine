@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 22:04:54 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 23:34:12 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 23:37:05 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ GraphicDisplay::render()
 		s.append(cur->getName());
 		s.append("\n");
 		out = cur->getOutput();
-		for (int i = 0; i < out.size(); i++)
+		for (unsigned int i = 0; i < out.size(); i++)
 		{
 			s.append(out[i]);
 			s.append("\n");

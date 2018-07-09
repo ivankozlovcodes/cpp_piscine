@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 16:25:52 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 22:36:20 by ikozlov          ###   ########.fr       */
+/*   Updated: 2018/07/08 23:37:38 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 TerminalDisplay::TerminalDisplay(std::vector<IMonitorModule*> modules) :
 	IMonitorDisplay(),
-	_name("FT_GKRELLM"),
-	_modules(modules)
+	_modules(modules),
+	_name("FT_GKRELLM")
 {
 	initscr(); // initialize screen
 	cbreak();
@@ -138,7 +138,6 @@ void
 TerminalDisplay::render(void)
 {
 	std::vector<IMonitorModule*>::iterator	it;
-	IMonitorModule							*current;
 
 	_x = 0; _y = 0;
 	printFrame();

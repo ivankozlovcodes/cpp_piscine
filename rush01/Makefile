@@ -6,7 +6,7 @@
 #    By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 19:06:22 by ikozlov           #+#    #+#              #
-#    Updated: 2018/07/08 22:08:25 by ikozlov          ###   ########.fr        #
+#    Updated: 2018/07/08 23:36:34 by ikozlov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ LIB +=  -framework sfml-graphics -framework sfml-window -framework sfml-system -
 INC = -I includes/ -I ./SFML/include
 
 CXX = clang++
-# FLAGS = -Wconversion -std=c++98 -pedantic  -Wall -Werror -Wextra
-FLAGS = -g -fsanitize=address
+FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
