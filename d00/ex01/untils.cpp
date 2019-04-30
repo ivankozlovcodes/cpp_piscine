@@ -6,14 +6,14 @@
 /*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/25 15:55:25 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/25 16:11:23 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2019/04/29 18:08:27 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 std::string		toLower(std::string s) {
-	for (int i = 0; i < s.length(); i++) {
+	for (size_t i = 0; i < s.length(); i++) {
 		s[i] = tolower(s[i]);
 	}
 	return (s);
@@ -42,7 +42,7 @@ std::string		getInfo(std::string field) {
 	return (buffer);
 }
 
-std::string		truncate(std::string s, int len) {
+std::string		truncate(std::string s, size_t len) {
 	if (s.length() > len) {
 		s.erase(len - 1, s.length() - len + 1);
 		s += '.';
