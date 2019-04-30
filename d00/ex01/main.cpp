@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/24 20:05:15 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/25 19:36:56 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/04/29 18:21:52 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ int				main(void) {
 	PhoneBook		phoneBook;
 
 	printMenu();
-	while (1) {
-		std::cout << "Please, enter a command" << std::endl;
-		std::getline(std::cin, command);
+	std::cout << "Please, enter a command" << std::endl;
+	while (std::getline(std::cin, command)) {
 		command = toLower(command);
 		if (command == ADD_COMMAND) {
 			if (phoneBook.index() < MAX_CAPACITY)
@@ -67,6 +66,7 @@ int				main(void) {
 			printMenu();
 		else
 			std::cout << "Invalid command" << std::endl;
+		std::cout << "Please, enter a command" << std::endl;
 	}
 	return (0);
 }
