@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 22:34:07 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/02 22:50:06 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/07 15:22:42 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ identify_from_reference( Base &p)
 int
 main(void)
 {
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	Base	*ptr = generate();
 
