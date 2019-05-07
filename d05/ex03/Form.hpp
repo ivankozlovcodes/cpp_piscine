@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 18:25:56 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 20:44:39 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/06 19:41:16 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ class	Form
 		~Form(void);
 
 		Form					&operator= (const Form &obj);
-		friend std::ostream		&operator<< (std::ostream &out,\
-				const Form &obj);
 
 		void					beSigned(Bureaucrat bureaucrat);
 
@@ -98,5 +96,8 @@ class	Form
 		const std::string		_name;
 		const std::string		_target;
 };
+
+std::ostream		&operator<< (std::ostream &out,\
+		const Form &obj);
 
 #endif
