@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 18:25:56 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/06/30 19:39:45 by ivankozlov       ###   ########.fr       */
+/*   Updated: 2019/05/06 19:40:27 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ class	Form
 		~Form(void);
 
 		Form					&operator= (const Form &obj);
-		friend std::ostream		&operator<< (std::ostream &out,\
-				const Form &obj);
 
 		void					beSigned(Bureaucrat bureaucrat);
 
@@ -76,5 +74,8 @@ class	Form
 		const int				_grade_to_execute;
 		const std::string		_name;
 };
+
+std::ostream		&operator<< (std::ostream &out,\
+		const Form &obj);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 15:29:20 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/06/30 20:51:52 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/06 19:41:41 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ class	Bureaucrat
 		~Bureaucrat(void);
 
 		Bureaucrat				&operator= (const Bureaucrat &src);
-		friend std::ostream		&operator<< (std::ostream &out,\
-				const Bureaucrat &obj);
 
 		int						getGrade(void) const;
 		std::string				getName(void) const;
@@ -83,5 +81,8 @@ class	Bureaucrat
 		int				_grade;
 		std::string		_name;
 };
+
+std::ostream		&operator<< (std::ostream &out,\
+				const Bureaucrat &obj);
 
 #endif

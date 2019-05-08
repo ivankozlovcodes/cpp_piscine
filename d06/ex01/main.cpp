@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 21:24:31 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/02 22:01:50 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/07 15:18:45 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void
 	for (i = 0; i < 8; i++)
 		data[i] = ALPHANUM[rand() % 62];
 	for (i = 8; i < 12; i++)
-		data[i] = rand() % 256;
+		data[i] = static_cast<char>(rand() % 256);
 	for (i = 12; i < 20; i++)
 		data[i] = ALPHANUM[rand() % 62];
 	std::cout << "Look what I've got here:" << std::endl;
@@ -51,7 +51,7 @@ Data
 int
 main(void)
 {
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 
 	void	*ser = serialize();
 	Data	*des = deserialize(ser);
