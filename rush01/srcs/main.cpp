@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 02:00:41 by ivankozlov        #+#    #+#             */
-/*   Updated: 2018/07/08 23:34:08 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/10 19:15:52 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ main(int ac, char *av[])
 	}
 	else
 	{
-		sf::RenderWindow window(sf::VideoMode(2000, 1000), "Frankenstein");
+		sf::RenderWindow window(sf::VideoMode(2000, 1200), "Frankenstein");
 		root = new GraphicDisplay(modules, window);
 		root->render();
 		while(window.isOpen())

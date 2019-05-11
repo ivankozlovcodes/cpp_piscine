@@ -6,7 +6,7 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 22:04:54 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 23:37:05 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/10 19:16:09 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ GraphicDisplay::render()
 	t1.setCharacterSize(30);
 	t1.setStyle(sf::Text::Bold);
 	t1.setFont(_font);
-	t1.setPosition(20, 100);
+	t1.setPosition(10, 50);
 	for (it = _modules.begin(); it != _modules.end(); it++)
 	{
 		cur = dynamic_cast<BaseModule*>(*it);
@@ -76,6 +76,7 @@ GraphicDisplay::render()
 			s.append(out[i]);
 			s.append("\n");
 		}
+		s.append("\n");
 	}
 	t1.setString(s.c_str());
 	this->_window.draw(t1);
