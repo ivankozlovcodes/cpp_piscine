@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ivankozlov <ivankozlov@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 15:19:10 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/03 16:45:14 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/08 14:05:03 by ivankozlov       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ printArray(Array<T> a, bool error)
 {
 	try
 	{
-		for (int i = 0; i < a.size(); i++)
+		for (unsigned int i = 0; i < a.size(); i++)
 			std::cout << "Array[" << i << "] Content: " << a[i] << std::endl;
 		if (error)
 			std::cout << "Array[" << a.size() << "] Content: " << a[a.size()];
@@ -38,10 +38,10 @@ testStrings()
 	Array<std::string> arr(10);
 	std::cout << "Testing string" << std::endl;
 
-	for (int i = 0; i < 10; i++)
+	for (unsigned int i = 0; i < 10; i++)
 		arr[i] = std::to_string(rand() % 1000);
 	Array<std::string> arr2(arr);
-	for (int i = 0; i < 10; i++)
+	for (unsigned int i = 0; i < 10; i++)
 		arr2[i] += "_suffix";
 	printArray(arr, false);
 	std::cout << std::endl;
@@ -54,10 +54,10 @@ testInt()
 	Array<int> arr(10);
 	std::cout << "Testing int" << std::endl;
 
-	for (int i = 0; i < 10; i++)
-		arr[i] =rand() % 1000;
+	for (unsigned int i = 0; i < 10; i++)
+		arr[i] = rand() % 1000;
 	Array<int> arr2(arr);
-	for (int i = 0; i < 10; i++)
+	for (unsigned int i = 0; i < 10; i++)
 		arr2[i]++;
 	printArray(arr, false);
 	std::cout << std::endl;
@@ -70,7 +70,7 @@ testInt()
 int
 main(void)
 {
-	srand(time(0));
+	srand((unsigned int)time(0));
 	try
 	{
 		std::cout << "Creating an empty array. Access operator should give an exception"\
