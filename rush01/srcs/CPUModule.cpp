@@ -6,19 +6,21 @@
 /*   By: ikozlov <ikozlov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 21:26:13 by ikozlov           #+#    #+#             */
-/*   Updated: 2018/07/08 22:57:44 by ikozlov          ###   ########.fr       */
+/*   Updated: 2019/05/10 19:11:20 by ikozlov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_gkrellm.hpp"
 
 #include <stdio.h>
+#include <algorithm>
 
 CPUModule::CPUModule(std::string name) : BaseModule(name)
 {
 	const char		*cmd =  "sysctl -n machdep.cpu.brand_string";
 
 	_cpuinfo = runCommand(cmd);
+	_cpuinfo.erase(std::remove(_cpuinfo.begin(), _cpuinfo.end(), '\n'));
 	tick();
 }
 
